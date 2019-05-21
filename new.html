@@ -5,13 +5,75 @@
 
 <body>
 <button id="kontener"> kontener</button>
+<br><br>
+
+
+
+<input type="text" id="wprowadzenie"></input>
+<button type="submit" value="sprawdz" id="sprawdzenie">potwierdz</button>
+<div id="wynik"></div>
+<br><br>
+
+<input type="text" id="wpr1"></input>
+<input type="text" id="wpr2"></input>
+<input type="submit" value="wypisz" id="spr"></input>
+<div id="wypisanko"></div>
 
 <script>
+//powiekszenie przyciusku
+var kont = document.getElementById('kontener');
+
+function powieksz (event) {
+kont.style.width = "500px";
+kont.style.height = "200px";
+
+}
+
+kontener.addEventListener('click',powieksz);
 
 
+//sprawdzenie liczb
+function spraw(){
+var liczba = document.getElementById('wprowadzenie').value; //po co to value
 
+if(liczba>0) document.getElementById('wynik').innerHTML = "dodatnia";
+else if(liczba==0) document.getElementById('wynik').innerHTML = "zero";
+else if(liczba<0) document.getElementById('wynik').innerHTML = "ujemna";
+
+
+}
+
+sprawdzenie.addEventListener('click',spraw);
+
+
+//wypisanie liczb z danego przedziału
+
+//tworze dwa texty i button wypisz, robie for z wypisaniem od poczatku do konca
+
+function print(event){
+var number1 = document.getElementById('wpr1').value;
+var number2 = document.getElementById('wpr2').value;
+var printed = "";
+
+	if (number2>number1) {
+	for(i=number1;i<=number2;i++){
+	printed = printed + i + " ";
+	}
+	document.getElementById('wypisanko').innerHTML = printed;
+	}
+	else if(number1>number2){
+	for(i=number1;i>=number2;i--){
+	printed = printed + i + " ";
+	}
+	document.getElementById('wypisanko').innerHTML = printed;
+	}
+	
+}
+
+spr.addEventListener('click',print);
 
 
 </script>
 </body>
 </html>
+
