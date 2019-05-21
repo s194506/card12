@@ -11,3 +11,5 @@ function napis(){
 	}
 }
 sub.addEventListener('click',napis);
+
+//proba
